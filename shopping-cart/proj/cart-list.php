@@ -37,6 +37,7 @@ if(!empty($pKeys)) {
                 <th scope="col"><i class="fas fa-trash-alt"></i></th>
                 <th scope="col">封面</th>
                 <th scope="col">作品名</th>
+                <th scope="col">尺寸</th>
                 <th scope="col">價格</th>
                 <th scope="col">數量</th>
                 <th scope="col">小計</th>
@@ -51,6 +52,7 @@ if(!empty($pKeys)) {
                 <td><a href="#" onclick="removeProductItem(event)"><i class="fas fa-trash-alt"></i></a></td>
                 <td class="aaa"><img src="imgs/small/<?= $item['item_no'] ?>.jpg" alt=""></td>
                 <td><?= $item['workname'] ?></td>
+                <td><?= $item['size'] ?></td>
                 <td class="price" data-price="<?= $item['price'] ?>"></td>
                 <td>
                     <select class="form-control quantity" data-qty="<?= $item['quantity'] ?>" onchange="changeQty(event)">

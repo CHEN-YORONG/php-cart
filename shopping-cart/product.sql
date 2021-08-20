@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-08-20 07:12:54
+-- 產生時間： 2021-08-20 09:08:20
 -- 伺服器版本： 10.4.20-MariaDB
 -- PHP 版本： 7.4.21
 
@@ -43,8 +43,8 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`sid`, `author`, `workname`, `item_no`, `size`, `price`) VALUES
 (1, 'JASON', 'lisa', 'No-001', '100cm*100cm', 100),
 (2, 'LEO', 'iphone', 'No-002', '200cm*200cm', 200),
-(3, 'HUNTER', 'Cat', 'No-003', '50cm*500cm', 300),
-(4, 'PAUL', '豆豆先生', 'No-004', '150cm*150cm', 400);
+(3, 'HUNTER', 'Cat', 'No-003', '300cm*300cm', 300),
+(4, 'PAUL', '豆豆先生', 'No-004', '400cm*400cm', 400);
 
 --
 -- 已傾印資料表的索引
