@@ -35,12 +35,35 @@ if($totalRows>0){
 ?>
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <?php include __DIR__ . '/parts/navbar.php'; ?>
+<style>
+    .mycard{
+        border: 1px solid #ccc;
+        border-radius: 5px;
 
-<div class="container">
-<div class="row">
-    <div class="col-md-9">
+    }
+    .myimg{
+        width: 100%;
+        height: 180px;
+    }
+    .myimg img{
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+    }
+    h6{
+        font-size: 1.5rem;
+        line-height: 2;
+        font-weight: bold;
+    }
+    p{
+        font-size: 1rem;
+    }
+</style>
+<div class="container ">
+<div class="row ">
+    <div class="col">
         <div class="row">
-            <div class="col">
+            <div class="col d-flex justify-content-end ">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item <?= $page==1 ? 'disabled' : '' ?>">
@@ -74,8 +97,10 @@ if($totalRows>0){
         <div class="row">
             <?php foreach($rows as $r): ?>
             <div class="col-md-3 product-unit" data-sid="<?= $r['sid'] ?>">
-                <div class="card" >
-                    <img src="imgs/small/<?= $r['item_no'] ?>.jpg" class="card-img-top" alt="...">
+                <div class="mycard ">
+                    <div class="myimg">
+                        <img src="imgs/small/<?= $r['item_no'] ?>.jpg" class="card-img-top" alt="...">
+                    </div>
                     <div class="card-body">
                         <h6 class="card-title">畫名 : <?= $r['workname'] ?></h6>
                         <p class="card-text"><i class="fas fa-user-secret"></i> : <?= $r['author'] ?></p>
