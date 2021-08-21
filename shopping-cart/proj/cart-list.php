@@ -50,7 +50,9 @@ if(!empty($pKeys)) {
                 ?>
             <tr class="p-item " data-sid="<?= $sid ?>">
                 <td><a href="#" onclick="removeProductItem(event)"><i class="fas fa-trash-alt"></i></a></td>
-                <td class="aaa"><img src="imgs/small/<?= $item['item_no'] ?>.jpg" alt=""></td>
+                <td class="aaa">
+                    <img src="imgs/small/<?= $item['item_no'] ?>.jpg" alt="">
+                </td>
                 <td><?= $item['workname'] ?></td>
                 <td><?= $item['size'] ?></td>
                 <td class="price" data-price="<?= $item['price'] ?>"></td>

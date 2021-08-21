@@ -36,6 +36,18 @@ if($totalRows>0){
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 <style>
+    *{
+        
+    }
+    .mycard1{
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+    .mycard1 img{
+        width: 100%;
+        height: 309px;
+        
+    }
     .mycard{
         border: 1px solid black;
         border-radius: 5px;
@@ -59,7 +71,7 @@ if($totalRows>0){
         font-size: 1rem;
     }
 </style>
-<div class="container ">
+<!-- <div class="container ">
 <div class="row ">
     <div class="col">
         <div class="row">
@@ -91,6 +103,7 @@ if($totalRows>0){
                             </a>
                         </li>
                     </ul>
+                    <img src="./imgs/No-001.jpg" alt="">
                 </nav>
             </div>
         </div>
@@ -122,7 +135,72 @@ if($totalRows>0){
             <?php endforeach;?>
         </div>
     </div>
+</div> -->
+
+
+<div class="container">
+<div class="row">
+            <div class="col d-flex justify-content-end ">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item <?= $page==1 ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?<?php
+                            $pageBtnQS['page']=$page-1;
+                            echo http_build_query($pageBtnQS)
+                            ?>">
+                                <i class="fas fa-arrow-circle-left"></i>
+                            </a>
+                        </li>
+                        <?php for($i=1; $i<=$totalPages; $i++):
+                            $pageBtnQS['page']=$i;
+                            ?>
+                            <li class="page-item <?= $i===$page ? 'active' : '' ?>">
+                                <a class="page-link" href="?<?= http_build_query($pageBtnQS) ?>">
+                                    <?= $i ?></a>
+                            </li>
+                        <?php endfor; ?>
+                        <li class="page-item <?= $page==$totalPages ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?<?php
+                            $pageBtnQS['page']=$page+1;
+                            echo http_build_query($pageBtnQS)
+                            ?>">
+                                <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <img src="./imgs/No-001.jpg" alt="">
+                </nav>
+            </div>
+        </div>
+<div class="row">
+    <?php foreach($rows as $r): ?>
+        <div class="mycard1 product-unit col-md-3" data-sid="<?= $r['sid'] ?>">
+            <img src="imgs/small/<?= $r['item_no'] ?>.jpg" alt="">
+            <div>
+                <h6>畫名 : <?= $r['workname'] ?></h6>
+                <p>作者 : <?= $r['author'] ?></p>
+                <p>價格 : <?= $r['price'] ?></p>
+                <p>尺寸 : <?= $r['size'] ?></p>
+                <form class="mt-3">
+                            <div class=" form-group">
+                                <select class="form-control qty" style="display: inline-block; width: auto">
+                                    <?php for($i=1; $i<=10; $i++){ ?>
+                                    <option value="<?= $i ?>"><?= $i ?></option>
+                                    <?php } ?>
+                                </select>
+                                <button type="button" class="ml-2 mb-1 btn btn-primary add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </form>
+            </div>
+        </div>
+        <?php endforeach;?>
+    </div>
 </div>
+
+
+
+
+
 
 </div>
 <?php include __DIR__ . '/parts/scripts.php'; ?>

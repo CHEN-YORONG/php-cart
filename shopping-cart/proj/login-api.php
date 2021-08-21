@@ -12,7 +12,7 @@ if(empty($email) or empty($password)){
     exit;
 }
 
-$sql = "SELECT * FROM members WHERE email=? AND password=SHA1(?)";
+$sql = "SELECT * FROM members WHERE email=? AND password=?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$email, $password]);
 

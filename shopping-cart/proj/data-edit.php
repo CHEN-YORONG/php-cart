@@ -39,8 +39,8 @@ if (empty($row)) {
                         
 
                         <div class="form-group">
-                            <label for="memberID">memberID *</label>
-                            <input type="text" class="form-control" id="memberID" name="memberID" value="<?= htmlentities($row['memberID'])?>"> <!-- value 顯示資料 htmlentities()特殊字元顯示 -->
+                            <label for="memberID" >memberID *</label>
+                            <input type="text" disabled class="form-control" id="memberID" name="memberID" value="<?= htmlentities($row['memberID'])?>"> <!-- value 顯示資料 htmlentities()特殊字元顯示 -->
                             <small class="form-text "></small>
                         </div>
                         

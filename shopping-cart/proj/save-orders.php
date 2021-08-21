@@ -30,7 +30,7 @@ $o_sql = "INSERT INTO `order`( `memberID`, `name`, `mobile`, `address`, `orderpr
 $o_stmt = $pdo->prepare($o_sql);
 $o_stmt->execute([
     
-    $_SESSION['loginUser']['memberID'],
+    $_SESSION['loginUser']['id'],
     $_SESSION['loginUser']['name'],
     $_SESSION['loginUser']['mobile'],
     $_SESSION['loginUser']['address'],
