@@ -25,11 +25,11 @@ if (!empty($pKeys)) {
     header('Location: product-list.php');
     exit;
 }
-$order_sid = $pdo->lastInsertId();
-$o_sql = "INSERT INTO `order`(`sid`, `memberID`, `name`, `mobile`, `address`, `orderprice`, `create_at`) VALUES (?, ?, ?, ?, ?, ?, NOW())";
+
+$o_sql = "INSERT INTO `order`( `memberID`, `name`, `mobile`, `address`, `orderprice`, `create_at`) VALUES (?, ?, ?, ?, ?, NOW())";
 $o_stmt = $pdo->prepare($o_sql);
 $o_stmt->execute([
-    $order_sid,
+    
     $_SESSION['loginUser']['memberID'],
     $_SESSION['loginUser']['name'],
     $_SESSION['loginUser']['mobile'],

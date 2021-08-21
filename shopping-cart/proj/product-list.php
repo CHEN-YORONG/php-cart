@@ -37,7 +37,7 @@ if($totalRows>0){
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 <style>
     .mycard{
-        border: 1px solid #ccc;
+        border: 1px solid black;
         border-radius: 5px;
 
     }
