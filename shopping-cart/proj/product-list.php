@@ -105,15 +105,15 @@ if($totalRows>0){
                         <h6 class="card-title">畫名 : <?= $r['workname'] ?></h6>
                         <p class="card-text"><i class="fas fa-user-secret"></i> : <?= $r['author'] ?></p>
                         <p class="card-text"><i class="fas fa-dollar-sign"></i> : <?= $r['price'] ?></p>
-                        <p class="card-text">尺寸 : <?= $r['size'] ?></p>
-                        <form>
-                            <div class="form-group">
+                        <p class="card-text ">尺寸 : <?= $r['size'] ?></p>
+                        <form class="mt-3">
+                            <div class=" form-group">
                                 <select class="form-control qty" style="display: inline-block; width: auto">
                                     <?php for($i=1; $i<=10; $i++){ ?>
                                     <option value="<?= $i ?>"><?= $i ?></option>
                                     <?php } ?>
                                 </select>
-                                <button type="button" class="btn btn-primary add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
+                                <button type="button" class="ml-2 mb-1 btn btn-primary add-to-cart-btn"><i class="fas fa-cart-plus"></i></button>
                             </div>
                         </form>
                     </div>

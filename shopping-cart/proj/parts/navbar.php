@@ -16,7 +16,7 @@ if (!isset($page_name)) {
                     <a class="nav-link" href="product-list.php">商品列表</a>
                 </li>
                 <li class="nav-item <?= $page_name == 'data-insert' ? 'active' : '' ?>">
-                    <a class="nav-link" href="cart-list.php">購物車
+                    <a class="nav-link" href="cart-list.php"><i class="fas fa-shopping-cart"></i>
                         <span class="badge badge-pill badge-info cart-count"></span></a>
                 </li>
                 <li class="nav-item active">
