@@ -8,8 +8,33 @@ $output=[
 'code' => 0,
 'rowCount' => 0,
 'postData' => $_POST,
-
 ];
+//判斷有沒有帳號和密碼
+if(!isset($_POST['name']) or !isset($_POST['email'])){
+    $output['error']='沒有姓名或EMAIL';
+    $output['code']=440;
+    echo json_encode($output,JSON_UNESCAPED_UNICODE);
+    exit; //直接離開 (中斷)
+}
+
+// TODO : 資料格式檢查
+if(strlen($_POST['name'])<2){
+
+    $output['error']='姓名長度太短';
+    $output['code']=410;
+    echo json_encode($output);
+    exit;
+}
+
+if(! filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    $output['error']='email 格式錯誤';
+    $output['code']=420;
+    echo json_encode($output);
+    exit;
+}
+
+
+
 
 //來源不名一律用這個
 $sql="INSERT INTO `members`(

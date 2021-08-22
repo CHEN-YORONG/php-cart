@@ -12,6 +12,20 @@ $output=[
 
 ];
 
+if(
+    empty($_POST['sid'])or
+    empty($_POST['name'])or
+    empty($_POST['email'])or
+    empty($_POST['mobile'])or
+    empty($_POST['bithday'])
+    ){
+        $output['error']='有欄位沒有填寫';
+        $output['code']=440;
+        echo json_encode($output,JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
+
 
 //來源不名一律用這個
 $sql="UPDATE `order` SET 
